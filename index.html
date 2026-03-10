@@ -5,75 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Study Workspace</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js" defer></script>
   </head>
   <body>
-    <header class="hero">
-      <nav class="top-nav">
-        <h1>Study Workspace</h1>
-        <button id="themeToggle" aria-label="Đổi giao diện">🌙</button>
-      </nav>
-      <section class="hero-content">
-        <p class="badge">Nền tảng học tập thông minh</p>
-        <h2>Giảm thời gian soạn bài, tăng logic và hiệu quả học tập</h2>
-        <p>
-          Workspace hỗ trợ học sinh và giáo viên xây dựng bài học có cấu trúc,
-          tạo slide PPT nhanh, và tạo flashcard ôn tập chỉ trong vài phút.
-        </p>
-        <div class="hero-actions">
-          <button class="primary">Bắt đầu ngay</button>
-          <button class="secondary">Xem tính năng</button>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#">Study Workspace</a>
+        <nav class="main-nav">
+          <a href="#features">Tính năng</a>
+          <a href="#flashcardStudio">Flashcard Studio</a>
+          <a href="#workflow">Quy trình</a>
+        </nav>
+        <div class="header-actions">
+          <button class="secondary" id="themeToggle" aria-label="Đổi giao diện">🌙</button>
+          <button class="primary">Dùng thử miễn phí</button>
         </div>
-      </section>
+      </div>
     </header>
 
     <main>
-      <section class="features" id="features">
-        <h3>Tính năng chính</h3>
-        <div class="cards">
-          <article class="card">
-            <h4>Soạn bài có logic</h4>
-            <p>
-              Gợi ý cấu trúc bài học theo mục tiêu, nội dung và hoạt động để tiết
-              kiệm thời gian chuẩn bị.
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <p class="badge">Nền tảng học tập thông minh</p>
+            <h1>Soạn bài nhanh hơn, logic hơn, trực quan hơn</h1>
+            <p class="lead">
+              Thiết kế theo phong cách workspace hiện đại: gom toàn bộ quy trình từ
+              ý tưởng bài giảng đến flashcard ôn tập trên cùng một màn hình làm việc.
             </p>
-          </article>
-          <article class="card">
-            <h4>Tạo slide PPT tự động</h4>
-            <p>
-              Tạo dàn ý slide nhanh theo chủ đề, từ mở đầu đến kết luận, phù hợp
-              trình bày trên lớp.
-            </p>
-          </article>
-          <article class="card">
-            <h4>Tạo flashcard học nhanh</h4>
-            <p>
-              Chuyển kiến thức trọng tâm thành bộ thẻ hỏi đáp để học sinh ghi nhớ
-              lâu hơn.
-            </p>
-          </article>
+            <div class="hero-actions">
+              <button class="primary">Bắt đầu ngay</button>
+              <button class="secondary">Xem demo</button>
+            </div>
+          </div>
+
+          <aside class="hero-panel">
+            <h3>Trong 1 workspace, bạn có thể</h3>
+            <ul>
+              <li>✅ Tạo dàn ý bài học có cấu trúc</li>
+              <li>✅ Tạo nhanh nội dung slide PPT</li>
+              <li>✅ Tạo flashcard từ văn bản hoặc ảnh</li>
+              <li>✅ Tinh chỉnh cho từng lớp học</li>
+            </ul>
+          </aside>
         </div>
       </section>
 
-      <section class="workflow">
-        <h3>Quy trình 3 bước</h3>
-        <ol>
-          <li><strong>Nhập chủ đề:</strong> Chọn môn học và mục tiêu bài học.</li>
-          <li><strong>Workspace xử lý:</strong> Tạo dàn bài, slide và flashcard.</li>
-          <li><strong>Tinh chỉnh nhanh:</strong> Cá nhân hóa theo phong cách của bạn.</li>
-        </ol>
+      <section class="features" id="features">
+        <div class="container">
+          <h2>Tính năng chính</h2>
+          <div class="cards">
+            <article class="card">
+              <h3>Soạn bài có logic</h3>
+              <p>Sắp xếp mục tiêu, hoạt động, nội dung theo flow dễ theo dõi.</p>
+            </article>
+            <article class="card">
+              <h3>Tạo slide PPT tự động</h3>
+              <p>Gợi ý bố cục slide mở bài, trọng tâm, luyện tập và kết luận.</p>
+            </article>
+            <article class="card">
+              <h3>Flashcard thông minh</h3>
+              <p>Biến kiến thức chính thành bộ hỏi đáp để ôn tập nhanh.</p>
+            </article>
+          </div>
+        </div>
       </section>
 
-      <section class="roadmap">
-        <h3>Lộ trình phát triển</h3>
-        <p>
-          Trong các phiên bản tiếp theo, hệ thống sẽ bổ sung nhiều công cụ nâng
-          cao như quản lý tài liệu, theo dõi tiến độ học tập và cộng tác nhóm.
-        </p>
+      <section class="flashcard-studio" id="flashcardStudio">
+        <div class="container studio-layout">
+          <div>
+            <h2>Flashcard Studio</h2>
+            <p>
+              Nhập nội dung bài học hoặc tải ảnh tài liệu. Hệ thống sẽ trích xuất
+              nội dung và tạo flashcard để học sinh luyện tập ngay.
+            </p>
+
+            <label for="lessonInput">Nội dung bài học</label>
+            <textarea
+              id="lessonInput"
+              placeholder="Ví dụ:\n- Quang hợp: Quá trình cây sử dụng ánh sáng để tạo chất hữu cơ.\n- Ti thể: Bào quan tạo năng lượng cho tế bào."
+              rows="9"
+            ></textarea>
+
+            <label for="imageInput">Hoặc tải ảnh tài liệu (jpg/png)</label>
+            <input id="imageInput" type="file" accept="image/*" />
+
+            <div class="studio-actions">
+              <button class="secondary" id="extractTextBtn">Trích xuất chữ từ ảnh</button>
+              <button class="primary" id="generateCardsBtn">Tạo flashcard</button>
+            </div>
+            <p id="studioStatus" class="status"></p>
+          </div>
+
+          <div class="studio-result">
+            <h3>Bộ flashcard tự động</h3>
+            <div id="flashcardList" class="flashcard-list">
+              <p class="empty">Chưa có flashcard. Hãy nhập nội dung hoặc tải ảnh để bắt đầu.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="workflow" id="workflow">
+        <div class="container">
+          <h2>Quy trình 3 bước</h2>
+          <ol>
+            <li><strong>Nhập chủ đề:</strong> Chọn môn học và mục tiêu bài học.</li>
+            <li><strong>Xử lý tự động:</strong> Tạo dàn bài, slide và flashcard.</li>
+            <li><strong>Tùy chỉnh nhanh:</strong> Phù hợp lớp học và phong cách giảng dạy.</li>
+          </ol>
+        </div>
       </section>
     </main>
 
     <footer>
-      <p>© 2026 Study Workspace. Thiết kế để học thông minh hơn mỗi ngày.</p>
+      <div class="container">
+        <p>© 2026 Study Workspace. Thiết kế để học thông minh hơn mỗi ngày.</p>
+      </div>
     </footer>
 
     <script src="script.js"></script>
