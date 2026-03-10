@@ -1,0 +1,130 @@
+:root {
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --text: #1f2a44;
+  --accent: #365cff;
+  --accent-soft: #e8edff;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.hero {
+  background: linear-gradient(120deg, #f0f4ff, #eefaf7);
+  padding: 2rem 1.5rem 3rem;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+#themeToggle {
+  border: 0;
+  background: var(--surface);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.hero-content {
+  max-width: 820px;
+  margin: 2rem auto 0;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  margin-bottom: 0.6rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+button {
+  padding: 0.7rem 1rem;
+  border-radius: 0.6rem;
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.primary {
+  background: var(--accent);
+  color: white;
+}
+
+.secondary {
+  background: white;
+  border: 1px solid #d8dff8;
+}
+
+main {
+  max-width: 1040px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 1px solid #e8eaf4;
+  box-shadow: 0 8px 22px rgba(30, 42, 68, 0.05);
+}
+
+.workflow,
+.roadmap {
+  margin-top: 2rem;
+  background: var(--surface);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  border: 1px solid #e8eaf4;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #667085;
+}
+
+.dark {
+  --bg: #0f172a;
+  --surface: #17213a;
+  --text: #ecf2ff;
+  --accent: #87a0ff;
+  --accent-soft: #273762;
+}
+
+.dark .secondary {
+  background: #1f2c4b;
+  color: #ecf2ff;
+  border-color: #32456f;
+}
