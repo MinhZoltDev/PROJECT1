@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MinhZolt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#"><i class="bi bi-stars"></i> MinhZolt</a>
+        <nav class="main-nav">
+          <a href="#features"><i class="bi bi-grid-1x2"></i> Tính năng</a>
+          <a href="#flashcardStudio"><i class="bi bi-journal-richtext"></i> Flashcard Studio</a>
+          <a href="#workflow"><i class="bi bi-diagram-3"></i> Quy trình</a>
+        </nav>
+        <div class="header-actions">
+          <button class="secondary" id="themeToggle" aria-label="Đổi giao diện"><i class="bi bi-moon-stars"></i></button>
+          <button class="primary"><i class="bi bi-rocket-takeoff"></i> Dùng thử miễn phí</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero reveal">
+        <div class="container hero-grid">
+          <div>
+            <p class="badge"><i class="bi bi-lightning-charge-fill"></i> Nền tảng học tập thông minh</p>
+            <h1>Soạn bài nhanh hơn, logic hơn, cuốn hút hơn</h1>
+            <p class="lead">
+              MinhZolt giúp bạn đi từ nội dung gốc → slide → flashcard trên cùng một workspace,
+              để tiết kiệm thời gian và nâng chất lượng bài giảng.
+            </p>
+            <div class="hero-actions">
+              <button class="primary"><i class="bi bi-play-circle"></i> Bắt đầu ngay</button>
+              <button class="secondary"><i class="bi bi-eye"></i> Xem demo</button>
+            </div>
+          </div>
+
+          <aside class="hero-panel reveal delay-1">
+            <h3><i class="bi bi-check2-circle"></i> Trong 1 workspace, bạn có thể</h3>
+            <ul>
+              <li><i class="bi bi-check2"></i> Tạo dàn ý bài học có cấu trúc</li>
+              <li><i class="bi bi-check2"></i> Tạo nhanh nội dung slide PPT</li>
+              <li><i class="bi bi-check2"></i> Tạo flashcard từ văn bản hoặc ảnh</li>
+              <li><i class="bi bi-check2"></i> Tinh chỉnh cho từng lớp học</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="features reveal" id="features">
+        <div class="container">
+          <div class="section-head">
+            <h2><i class="bi bi-gem"></i> Tính năng chính</h2>
+            <div class="slider-controls">
+              <button id="featurePrev" class="secondary icon-btn" type="button" aria-label="Trước"><i class="bi bi-arrow-left"></i></button>
+              <button id="featureNext" class="secondary icon-btn" type="button" aria-label="Sau"><i class="bi bi-arrow-right"></i></button>
+            </div>
+          </div>
+
+          <div class="feature-slider" id="featureSlider">
+            <article class="card reveal">
+              <h3><i class="bi bi-diagram-2"></i> Soạn bài có logic</h3>
+              <p>Sắp xếp mục tiêu, hoạt động, nội dung theo flow khoa học và dễ theo dõi.</p>
+            </article>
+            <article class="card reveal">
+              <h3><i class="bi bi-file-slides"></i> Tạo slide PPT tự động</h3>
+              <p>Gợi ý bố cục mở bài, trọng tâm, luyện tập, kết luận chỉ trong vài phút.</p>
+            </article>
+            <article class="card reveal">
+              <h3><i class="bi bi-stack"></i> Flashcard thông minh</h3>
+              <p>Nhận diện câu hỏi/câu trả lời tự động và tạo thẻ 2 mặt để ôn tập.</p>
+            </article>
+            <article class="card reveal">
+              <h3><i class="bi bi-graph-up-arrow"></i> Theo dõi tiến độ</h3>
+              <p>Đo nhanh mức độ hoàn thành để biết bài nào cần ôn lại nhiều hơn.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="flashcard-studio reveal" id="flashcardStudio">
+        <div class="container studio-layout">
+          <div>
+            <h2><i class="bi bi-journal-richtext"></i> Flashcard Studio</h2>
+            <p>
+              Bạn có thể nhập nội dung thô để hệ thống nhận diện tự động,
+              hoặc nhập tách riêng Câu hỏi/Câu trả lời để tạo thẻ chính xác hơn.
+            </p>
+
+            <label for="lessonInput"><i class="bi bi-text-paragraph"></i> Nội dung tổng hợp</label>
+            <textarea
+              id="lessonInput"
+              placeholder="Ví dụ:
+Câu 1: ADN là gì?
+ADN là vật chất di truyền.
+Quang hợp là gì?
+Là quá trình cây dùng ánh sáng để tổng hợp chất hữu cơ."
+              rows="8"
+            ></textarea>
+
+            <div class="qa-grid">
+              <div>
+                <label for="questionInput"><i class="bi bi-patch-question"></i> Ô nhập Câu hỏi</label>
+                <input id="questionInput" type="text" placeholder="Ví dụ: Ti thể có chức năng gì?" />
+              </div>
+              <div>
+                <label for="answerInput"><i class="bi bi-patch-check"></i> Ô nhập Câu trả lời</label>
+                <input id="answerInput" type="text" placeholder="Ví dụ: Tạo năng lượng cho tế bào." />
+              </div>
+            </div>
+
+            <label for="imageInput"><i class="bi bi-image"></i> Hoặc tải ảnh tài liệu (jpg/png)</label>
+            <input id="imageInput" type="file" accept="image/*" />
+
+            <div class="studio-actions">
+              <button class="secondary" id="extractTextBtn" type="button"><i class="bi bi-camera"></i> Trích xuất chữ từ ảnh</button>
+              <button class="secondary" id="addManualCardBtn" type="button"><i class="bi bi-plus-square"></i> Thêm thẻ thủ công</button>
+              <button class="primary" id="generateCardsBtn" type="button"><i class="bi bi-magic"></i> Tạo flashcard</button>
+            </div>
+            <p id="studioStatus" class="status"></p>
+          </div>
+
+          <div class="studio-result reveal delay-1">
+            <h3><i class="bi bi-stack"></i> Bộ flashcard tự động</h3>
+            <p class="flip-hint"><i class="bi bi-arrow-repeat"></i> Bấm vào từng thẻ ngang để lật mặt hỏi/đáp.</p>
+            <div id="flashcardList" class="flashcard-list">
+              <p class="empty">Chưa có flashcard. Hãy nhập nội dung hoặc thêm cặp hỏi/đáp để bắt đầu.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="workflow reveal" id="workflow">
+        <div class="container">
+          <h2><i class="bi bi-signpost-split"></i> Quy trình 3 bước</h2>
+          <ol>
+            <li><strong>Nhập chủ đề:</strong> Chọn môn học và mục tiêu bài học.</li>
+            <li><strong>Xử lý tự động:</strong> Tạo dàn bài, slide và flashcard.</li>
+            <li><strong>Tùy chỉnh nhanh:</strong> Phù hợp lớp học và phong cách giảng dạy.</li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© 2026 MinhZolt. Thiết kế để học thông minh hơn mỗi ngày.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
