@@ -58,11 +58,19 @@ function renderFlashcards(cards) {
 
   flashcardList.innerHTML = cards
     .map(
-      (card) => `
-        <article class="flashcard">
-          <p><strong>Hỏi:</strong> ${card.question}</p>
-          <p><strong>Đáp:</strong> ${card.answer}</p>
-        </article>
+      (card, index) => `
+        <button class="flashcard flip-card" type="button" aria-label="Lật flashcard ${index + 1}">
+          <span class="flip-card-inner">
+            <span class="flip-face flip-front">
+              <span class="face-label">Mặt trước · Câu hỏi</span>
+              <span>${card.question}</span>
+            </span>
+            <span class="flip-face flip-back">
+              <span class="face-label">Mặt sau · Câu trả lời</span>
+              <span>${card.answer}</span>
+            </span>
+          </span>
+        </button>
       `
     )
     .join("");
@@ -125,4 +133,15 @@ if (extractTextBtn) {
 
 if (generateCardsBtn) {
   generateCardsBtn.addEventListener("click", generateFlashcards);
+}
+
+if (flashcardList) {
+  flashcardList.addEventListener("click", (event) => {
+    const card = event.target.closest(".flip-card");
+    if (!card) {
+      return;
+    }
+
+    card.classList.toggle("is-flipped");
+  });
 }

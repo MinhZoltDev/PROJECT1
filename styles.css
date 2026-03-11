@@ -213,11 +213,57 @@ textarea::placeholder {
   gap: 0.7rem;
 }
 
+.flip-hint {
+  color: var(--muted);
+  margin: -0.2rem 0 0.8rem;
+  font-size: 0.95rem;
+}
+
 .flashcard {
-  background: var(--surface-2);
-  border: 1px solid var(--border);
+  perspective: 1000px;
+  padding: 0;
+  text-align: left;
+}
+
+.flip-card-inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 130px;
+  transform-style: preserve-3d;
+  transition: transform 0.55s ease;
+}
+
+.flip-face {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  width: 100%;
+  min-height: 130px;
   border-radius: 0.8rem;
   padding: 0.85rem;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  backface-visibility: hidden;
+  justify-content: center;
+}
+
+.flip-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+}
+
+.flip-card.is-flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.face-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  font-weight: 700;
 }
 
 .empty {
