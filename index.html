@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MinhZolt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#"><i class="bi bi-stars"></i> MinhZolt</a>
+        <nav class="main-nav">
+          <a href="#features"><i class="bi bi-grid-1x2"></i> Tính năng</a>
+          <a href="#intro"><i class="bi bi-lightbulb"></i> Giới thiệu</a>
+          <a href="flashcard-builder.html"><i class="bi bi-journal-plus"></i> Tạo Flashcard</a>
+        </nav>
+        <div class="header-actions">
+          <button class="secondary" id="themeToggle" aria-label="Đổi giao diện"><i class="bi bi-moon-stars"></i></button>
+          <a class="primary cta-link" href="flashcard-builder.html"><i class="bi bi-rocket-takeoff"></i> Bắt đầu tạo bộ thẻ</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero reveal">
+        <div class="container hero-grid">
+          <div>
+            <p class="badge"><i class="bi bi-lightning-charge-fill"></i> Nền tảng học tập thông minh</p>
+            <h1>Soạn bài nhanh hơn, logic hơn, cuốn hút hơn</h1>
+            <p class="lead">
+              MinhZolt giúp bạn đi từ nội dung gốc → slide → flashcard trên cùng một workspace.
+              Tập trung tiết kiệm thời gian và tăng chất lượng học tập.
+            </p>
+            <div class="hero-actions">
+              <a class="primary cta-link" href="flashcard-builder.html"><i class="bi bi-journal-plus"></i> Mở trang tạo flashcard</a>
+              <a class="secondary cta-link" href="#features"><i class="bi bi-eye"></i> Xem tính năng</a>
+            </div>
+          </div>
+
+          <aside class="hero-panel reveal delay-1">
+            <img src="assets/student-study.svg" alt="Học sinh đang học bài" class="student-hero" />
+            <h3><i class="bi bi-check2-circle"></i> Trong 1 workspace, bạn có thể</h3>
+            <ul>
+              <li><i class="bi bi-check2"></i> Tạo dàn ý bài học có cấu trúc</li>
+              <li><i class="bi bi-check2"></i> Tạo nhanh nội dung slide PPT</li>
+              <li><i class="bi bi-check2"></i> Tạo bộ flashcard 2 mặt để luyện tập</li>
+              <li><i class="bi bi-check2"></i> Chuyển qua trang builder chuyên dụng chỉ với 1 click</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="features reveal" id="features">
+        <div class="container">
+          <div class="section-head">
+            <h2><i class="bi bi-gem"></i> Tính năng chính</h2>
+          </div>
+          <div class="feature-slider" id="featureSlider">
+            <article class="card feature-card">
+              <h3><i class="bi bi-diagram-2"></i> Soạn bài có logic</h3>
+              <p>Sắp xếp mục tiêu, hoạt động và nội dung theo flow dễ theo dõi.</p>
+            </article>
+            <article class="card feature-card">
+              <h3><i class="bi bi-file-slides"></i> Tạo slide PPT tự động</h3>
+              <p>Gợi ý bố cục mở bài, trọng tâm, luyện tập và kết luận trong vài phút.</p>
+            </article>
+            <article class="card feature-card">
+              <h3><i class="bi bi-journal-text"></i> Builder chuyên dụng</h3>
+              <p>Trang riêng để nhập title, description, term/definition và preview trước khi tạo list.</p>
+            </article>
+            <article class="card feature-card">
+              <h3><i class="bi bi-image"></i> OCR từ ảnh</h3>
+              <p>Tải ảnh tài liệu và tự động tách dữ liệu để tạo thẻ học tập nhanh chóng.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="workflow reveal" id="intro">
+        <div class="container">
+          <h2><i class="bi bi-signpost-split"></i> Giới thiệu nhanh</h2>
+          <p class="lead">
+            Trang demo này tập trung giới thiệu sản phẩm. Phần tạo bộ thẻ thực tế đã tách thành trang riêng để thao tác dễ hơn,
+            đúng quy trình: nhập dữ liệu → preview → tạo list → luyện tập.
+          </p>
+          <a class="primary cta-link" href="flashcard-builder.html"><i class="bi bi-box-arrow-up-right"></i> Đi đến trang tạo flashcard</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© 2026 MinhZolt. Thiết kế để học thông minh hơn mỗi ngày.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
