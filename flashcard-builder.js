@@ -2,6 +2,7 @@ const rowsContainer = document.getElementById("rowsContainer");
 const previewList = document.getElementById("previewList");
 const statusText = document.getElementById("statusText");
 const addRowBtn = document.getElementById("addRowBtn");
+const addRowInlineBtn = document.getElementById("addRowInlineBtn");
 const previewBtn = document.getElementById("previewBtn");
 const createListBtn = document.getElementById("createListBtn");
 const ocrBtn = document.getElementById("ocrBtn");
@@ -66,7 +67,7 @@ function renderPreview() {
 
   if (!cards.length) {
     previewList.innerHTML = "<p class='empty'>Chưa có flashcard để xem trước.</p>";
-    setStatus("Bạn cần nhập ít nhất 1 cặp term/definition.", true);
+    setStatus("Bạn cần nhập ít nhất 3 cặp term/definition để tạo list.", true);
     return cards;
   }
 
@@ -132,6 +133,10 @@ async function handleOcr() {
 function createList() {
   const cards = renderPreview();
   if (!cards.length) return;
+  if (cards.length < 3) {
+    setStatus("Phải tạo ít nhất 3 flashcard mới được bấm Tạo list.", true);
+    return;
+  }
 
   const payload = {
     title: setTitle?.value.trim() || "Flashcard Set",
@@ -144,6 +149,7 @@ function createList() {
 }
 
 addRowBtn?.addEventListener("click", () => createRow());
+addRowInlineBtn?.addEventListener("click", () => createRow());
 previewBtn?.addEventListener("click", renderPreview);
 ocrBtn?.addEventListener("click", handleOcr);
 createListBtn?.addEventListener("click", createList);
@@ -155,4 +161,6 @@ rowsContainer?.addEventListener("click", (event) => {
   setStatus("Đã xóa 1 flashcard.");
 });
 
+createRow();
+createRow();
 createRow();
