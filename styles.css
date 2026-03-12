@@ -272,6 +272,19 @@ input::placeholder {
   grid-template-columns: 1fr 1fr;
 }
 
+.open-builder {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--primary, var(--accent));
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.open-builder:hover {
+  text-decoration: underline;
+}
+
 .status {
   min-height: 1.45rem;
   color: var(--status);

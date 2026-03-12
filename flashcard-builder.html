@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MinhZolt | Flashcard Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="flashcard-builder.css" />
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="index.html" class="back-link"><i class="bi bi-arrow-left"></i> Về trang demo</a>
+      <h1><i class="bi bi-journal-plus"></i> Create a new flashcard set</h1>
+      <button id="addRowBtn" class="btn primary"><i class="bi bi-plus-lg"></i> Thêm dòng</button>
+    </header>
+
+    <main class="page">
+      <section class="meta-card">
+        <label for="setTitle">Title flashcard</label>
+        <input id="setTitle" type="text" placeholder="Ví dụ: Sinh học 10 - Chương ADN" />
+
+        <label for="setDescription">Description</label>
+        <textarea id="setDescription" rows="3" placeholder="Mô tả ngắn về bộ thẻ học tập..."></textarea>
+
+        <div class="meta-actions">
+          <label class="upload-btn" for="ocrImageInput"><i class="bi bi-image"></i> Trích xuất flashcard từ ảnh</label>
+          <input id="ocrImageInput" type="file" accept="image/*" />
+          <button id="ocrBtn" class="btn secondary" type="button"><i class="bi bi-camera"></i> OCR ảnh</button>
+          <button id="renderBtn" class="btn primary" type="button"><i class="bi bi-magic"></i> Render Flashcard</button>
+        </div>
+        <p id="statusText" class="status"></p>
+      </section>
+
+      <section class="editor-card">
+        <div class="editor-head">
+          <h2><i class="bi bi-list-columns-reverse"></i> Danh sách Term / Definition</h2>
+          <p>Bố cục ngang: mặt trước = Term, mặt sau = Definition.</p>
+        </div>
+        <div id="rowsContainer" class="rows"></div>
+      </section>
+
+      <section class="preview-card">
+        <h2><i class="bi bi-stack"></i> Preview flashcard</h2>
+        <div id="previewList" class="preview-list">
+          <p class="empty">Chưa có flashcard để xem trước.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="flashcard-builder.js"></script>
+  </body>
+</html>

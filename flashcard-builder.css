@@ -1,0 +1,209 @@
+:root {
+  --bg: #f1f4fb;
+  --surface: #ffffff;
+  --ink: #1f2741;
+  --muted: #6a7695;
+  --line: #d8deef;
+  --primary: #4b57ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Be Vietnam Pro", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.6vw, 1.8rem);
+}
+
+.back-link {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.page {
+  width: min(1400px, 95%);
+  margin: 1rem auto 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.meta-card,
+.editor-card,
+.preview-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+label {
+  font-weight: 700;
+  display: block;
+  margin: 0.5rem 0;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  padding: 0.78rem;
+  font: inherit;
+  background: #f8faff;
+}
+
+.meta-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+#ocrImageInput {
+  display: none;
+}
+
+.upload-btn,
+.btn {
+  border-radius: 0.8rem;
+  padding: 0.63rem 0.9rem;
+  border: 1px solid var(--line);
+  background: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.editor-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.editor-head h2,
+.preview-card h2 {
+  margin: 0;
+}
+
+.editor-head p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.rows {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+.card-row {
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: #fbfcff;
+  padding: 0.9rem;
+}
+
+.row-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.row-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 0.8rem;
+  align-items: end;
+}
+
+.field small {
+  color: var(--muted);
+  font-weight: 700;
+  display: block;
+  margin-top: 0.35rem;
+}
+
+.delete-btn {
+  height: 46px;
+  padding: 0 0.9rem;
+  border: 1px solid #ffc6c6;
+  color: #c82121;
+  background: #fff3f3;
+}
+
+.preview-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.preview-item {
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: #f8faff;
+  padding: 0.9rem;
+}
+
+.preview-item .top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.preview-item .content {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0.7rem 0 0;
+}
+
+.status,
+.empty {
+  color: var(--muted);
+  margin: 0.55rem 0 0;
+}
+
+@media (max-width: 900px) {
+  .row-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    flex-wrap: wrap;
+  }
+}
