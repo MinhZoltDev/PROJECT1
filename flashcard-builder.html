@@ -13,38 +13,39 @@
   </head>
   <body>
     <header class="topbar">
-      <a href="index.html" class="back-link"><i class="bi bi-arrow-left"></i> Về trang demo</a>
-      <h1><i class="bi bi-journal-plus"></i> Create a new flashcard set</h1>
-      <button id="addRowBtn" class="btn primary"><i class="bi bi-plus-lg"></i> Thêm dòng</button>
+      <a href="index.html" class="back-link"><i class="bi bi-arrow-left"></i> Trang ban đầu</a>
+      <h1><i class="bi bi-journal-plus"></i> Tạo bộ flashcard</h1>
+      <button id="addRowBtn" class="btn primary" type="button"><i class="bi bi-plus-lg"></i> Thêm flashcard</button>
     </header>
 
     <main class="page">
       <section class="meta-card">
         <label for="setTitle">Title flashcard</label>
-        <input id="setTitle" type="text" placeholder="Ví dụ: Sinh học 10 - Chương ADN" />
+        <input id="setTitle" type="text" placeholder="Ví dụ: Psychology 101" />
 
         <label for="setDescription">Description</label>
-        <textarea id="setDescription" rows="3" placeholder="Mô tả ngắn về bộ thẻ học tập..."></textarea>
+        <textarea id="setDescription" rows="3" placeholder="Mô tả ngắn về bộ thẻ..."></textarea>
 
         <div class="meta-actions">
-          <label class="upload-btn" for="ocrImageInput"><i class="bi bi-image"></i> Trích xuất flashcard từ ảnh</label>
+          <label class="upload-btn" for="ocrImageInput"><i class="bi bi-image"></i> Chọn ảnh OCR</label>
           <input id="ocrImageInput" type="file" accept="image/*" />
-          <button id="ocrBtn" class="btn secondary" type="button"><i class="bi bi-camera"></i> OCR ảnh</button>
-          <button id="renderBtn" class="btn primary" type="button"><i class="bi bi-magic"></i> Render Flashcard</button>
+          <button id="ocrBtn" class="btn secondary" type="button"><i class="bi bi-camera"></i> Trích xuất từ ảnh</button>
+          <button id="previewBtn" class="btn secondary" type="button"><i class="bi bi-eye"></i> Preview</button>
+          <button id="createListBtn" class="btn primary" type="button"><i class="bi bi-collection-play"></i> Tạo list</button>
         </div>
         <p id="statusText" class="status"></p>
       </section>
 
       <section class="editor-card">
         <div class="editor-head">
-          <h2><i class="bi bi-list-columns-reverse"></i> Danh sách Term / Definition</h2>
-          <p>Bố cục ngang: mặt trước = Term, mặt sau = Definition.</p>
+          <h2><i class="bi bi-list-columns-reverse"></i> Tạo flashcard (ngang)</h2>
+          <p>Term = mặt trước, Definition = mặt sau.</p>
         </div>
         <div id="rowsContainer" class="rows"></div>
       </section>
 
       <section class="preview-card">
-        <h2><i class="bi bi-stack"></i> Preview flashcard</h2>
+        <h2><i class="bi bi-stack"></i> Preview kiểm tra lỗi</h2>
         <div id="previewList" class="preview-list">
           <p class="empty">Chưa có flashcard để xem trước.</p>
         </div>
