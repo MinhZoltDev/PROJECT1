@@ -1,3 +1,4 @@
+html{scroll-behavior:smooth}
 :root { --bg:#f2f3f8; --surface:#fff; --ink:#273049; --muted:#6a7590; --accent:#2f2aa1; }
 *{box-sizing:border-box}
 body{margin:0;font-family:"Be Vietnam Pro",sans-serif;background:var(--bg);color:var(--ink)}

@@ -1,6 +1,7 @@
 const themeToggle = document.getElementById("themeToggle");
 const featureSlider = document.getElementById("featureSlider");
 const featureCards = featureSlider ? [...featureSlider.querySelectorAll(".feature-card")] : [];
+const revealItems = [...document.querySelectorAll(".reveal")];
 let activeIndex = 0;
 let autoTimer;
 
@@ -13,7 +14,7 @@ if (themeToggle) {
   });
 }
 
-function setActiveCard(index) {
+function highlightCard(index) {
   if (!featureSlider || !featureCards.length) {
     return;
   }
@@ -23,24 +24,47 @@ function setActiveCard(index) {
     card.classList.toggle("is-active", i === activeIndex);
   });
 
-  featureCards[activeIndex].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+  const activeCard = featureCards[activeIndex];
+  const nextLeft = activeCard.offsetLeft - (featureSlider.clientWidth - activeCard.clientWidth) / 2;
+  featureSlider.scrollTo({ left: Math.max(nextLeft, 0), behavior: "smooth" });
 }
 
 function startAutoSlide() {
   if (!featureCards.length) {
     return;
   }
-
   clearInterval(autoTimer);
   autoTimer = setInterval(() => {
-    setActiveCard(activeIndex + 1);
+    highlightCard(activeIndex + 1);
   }, 2600);
 }
 
 if (featureCards.length) {
-  setActiveCard(0);
+  highlightCard(0);
   startAutoSlide();
 
   featureSlider.addEventListener("mouseenter", () => clearInterval(autoTimer));
   featureSlider.addEventListener("mouseleave", startAutoSlide);
+
+  featureCards.forEach((card, index) => {
+    card.addEventListener("mouseenter", () => highlightCard(index));
+  });
+}
+
+if ("IntersectionObserver" in window && revealItems.length) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+  );
+
+  revealItems.forEach((item) => observer.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add("in-view"));
 }
