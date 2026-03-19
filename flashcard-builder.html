@@ -15,11 +15,10 @@
     <header class="topbar">
       <a href="index.html" class="back-link"><i class="bi bi-arrow-left"></i> Trang ban đầu</a>
       <h1><i class="bi bi-journal-plus"></i> Tạo bộ flashcard</h1>
-      <button id="addRowBtn" class="btn primary" type="button"><i class="bi bi-plus-lg"></i> Thêm flashcard</button>
     </header>
 
     <main class="page">
-      <section class="meta-card">
+      <section class="meta-card page-animate">
         <label for="setTitle">Title flashcard</label>
         <input id="setTitle" type="text" placeholder="Ví dụ: Psychology 101" />
 
@@ -36,7 +35,7 @@
         <p id="statusText" class="status"></p>
       </section>
 
-      <section class="editor-card">
+      <section class="editor-card page-animate">
         <div class="editor-head">
           <h2><i class="bi bi-list-columns-reverse"></i> Tạo flashcard (ngang)</h2>
           <div class="editor-tools">
@@ -47,7 +46,7 @@
         <div id="rowsContainer" class="rows"></div>
       </section>
 
-      <section class="preview-card">
+      <section class="preview-card page-animate">
         <h2><i class="bi bi-stack"></i> Preview kiểm tra lỗi</h2>
         <div id="previewList" class="preview-list">
           <p class="empty">Chưa có flashcard để xem trước.</p>
