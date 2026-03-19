@@ -1,0 +1,20 @@
+html{scroll-behavior:smooth}
+:root { --bg:#f2f3f8; --surface:#fff; --ink:#273049; --muted:#6a7590; --accent:#2f2aa1; }
+*{box-sizing:border-box}
+body{margin:0;font-family:"Be Vietnam Pro",sans-serif;background:var(--bg);color:var(--ink)}
+.review-page{width:min(1320px,95%);margin:1.2rem auto;animation:pageFade .55s ease both}
+.review-head h1{margin:.2rem 0 .25rem;font-size:2rem}
+.review-head p{margin:0 0 1rem;color:var(--muted)}
+.back-link{text-decoration:none;color:var(--muted);font-weight:600;transition:color .25s ease, transform .25s ease}
+.back-link:hover{color:#324fff;transform:translateX(-2px)}
+.review-card{width:100%;border:1px solid #dcdfea;border-radius:1.2rem;background:#fff;text-align:left;padding:1rem 1.4rem 0;cursor:pointer;transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease}
+.review-card:hover{transform:translateY(-3px);box-shadow:0 16px 30px rgba(39,48,73,.1);border-color:#c6d0ef}
+.card-top{display:flex;justify-content:space-between;color:#4c5777;font-weight:600}
+.card-content{min-height:390px;font-size:3rem;line-height:1.24;margin:2.2rem 0 1rem;animation:contentPulse .35s ease}
+.card-bottom{margin:0 -1.4rem;padding:.9rem 0;text-align:center;background:var(--accent);color:#fff;border-radius:0 0 1.2rem 1.2rem;font-weight:700}
+.controls{display:flex;justify-content:center;gap:1.2rem;padding:1.1rem 0}
+.ctrl{border:0;background:#e6e8f0;width:76px;height:56px;border-radius:999px;font-size:1.6rem;color:#4f5a78;cursor:pointer;transition:transform .25s ease, box-shadow .25s ease, background-color .25s ease}
+.ctrl:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(39,48,73,.12);background:#dce3f5}
+@keyframes pageFade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes contentPulse{from{opacity:.6;transform:scale(.985)}to{opacity:1;transform:scale(1)}}
+@media (max-width: 900px){.card-content{font-size:2rem;min-height:240px}}
